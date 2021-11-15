@@ -1,38 +1,45 @@
 ---
 title: Hello World
+date: 2020-12-27
+tag: Rust
+category: Rust
+mathjax: false
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+A rust way to say hello world!
 
-### Create a new post
+<!--more-->
 
-``` bash
-$ hexo new "My New Post"
+## Code in Rust
+```rust
+use ferris_says::say;
+
+use std::io::{stdout, BufWriter};
+
+fn main() 
+{
+    let stdout=stdout();
+    let message = String::from("Hello fellows!\nHello again.\n");
+    let width =  message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+
+    say(message.as_bytes(),width,&mut writer).unwrap();
+    
+}
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+## Output
 
-### Run server
-
-``` bash
-$ hexo server
 ```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
+ ________________
+/ Hello fellows! \
+\ Hello again.   /
+ ----------------
+        \
+         \
+            _~^~^~_
+        \) /  o o  \ (/
+          '_   -   _'
+          / '-----' \
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
