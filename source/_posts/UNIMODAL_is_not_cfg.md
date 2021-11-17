@@ -11,10 +11,18 @@ In this article, we will prove that: the language 'UNIMODAL' is not cfg. Also, w
 <!--more-->
 ## proposition one:"BINARY EQUAL"：
 Alphabet：{S,0,1}
+
 language BINARY_EQUAL：string such as $\{(0|1)^* S (0|1)^*\}$，AND the binary number before '#' is equal to the the latter one.
+
 statement： BINARY_EQUAL is not context free grammar
 
-Prove: Assume that BINARY_EQUAL is cfl(context free language), then use the pump lemma. For a string s="xxxx...xxxx#yyyy...yyyy", $\exists uvwxy, \text{such that} \ s=uvwxy\ ,\text{and}\ \ \forall i\ge 0, uv^iwx^iy\in \mathbb{BINARY\_EQUAL} $. 
+Prove: Assume that BINARY_EQUAL is cfl(context free language), then use the pump lemma. 
+
+For a string s="xxxx...xxxx#yyyy...yyyy"
+
+$$
+\exists uvwxy, \text{such that} \ s=uvwxy\ ,\text{and}\ \ \forall i\ge 0, uv^iwx^iy\in \mathbb{BINARY\_EQUAL} 
+$$
 
 We choose a special string: $s=1^k0^kS0^k1^k$, so when k is large enough, the v and x must be different. Hence, the pumped string is not BINARY_EQUAL. So the proposition is right.
 
