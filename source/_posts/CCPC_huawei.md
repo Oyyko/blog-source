@@ -49,7 +49,7 @@ Yes
 猜想：分子分母(注意一定要约分)的和为2的幂次的时候，可以做到。
 
 先写一波代码试一下：
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 
